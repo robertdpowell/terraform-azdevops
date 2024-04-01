@@ -1,3 +1,3 @@
 # terraform-azdevops
 
-go
+go testing
