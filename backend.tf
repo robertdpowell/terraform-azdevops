@@ -1,3 +1,4 @@
+terraform {
   backend "azurerm" {
     # These fields are just placeholders for documentation purposes
     # The actual values will be supplied by the -backend-config parameters
