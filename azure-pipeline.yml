@@ -1,0 +1,26 @@
+trigger:
+- main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+- group: ado
+
+steps:
+- checkout: self
+
+- task: TerraformInstaller@0
+  inputs:
+    terraformVersion: 'latest'
+  displayName: 'Install Terraform'
+
+- script: |
+    terraform init
+    terraform plan -var "personal_access_token=$(personal_access_token)" -out=tfplan
+    terraform apply -auto-approve tfplan
+  displayName: 'Initialize and Apply Terraform'
+  env:
+    TF_VAR_personal_access_token: $(personal_access_token)
+    TF_VAR_org_service_url: $(org_service_url)
+
