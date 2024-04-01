@@ -10,6 +10,7 @@ variables:
 steps:
 - checkout: self
 
+
 - script: |
     echo "Initializing Terraform..."
     terraform init \
@@ -19,6 +20,7 @@ steps:
       -backend-config="key=$(backend_statefile_key)" \
       -backend-config="access_key=$(backend_access_key)"
     echo "Running Terraform plan..."
+
     terraform plan -var "personal_access_token=$(personal_access_token)" -out=tfplan
     echo "Applying Terraform configuration..."
     terraform apply -auto-approve tfplan

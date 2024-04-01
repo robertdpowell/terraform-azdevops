@@ -13,8 +13,27 @@ provider "azuredevops" {
   personal_access_token = var.personal_access_token
 }
 
+
 resource "azuredevops_project" "project" {
-  name               = "MyNewProject"
+  name               = "MyNewProject2"
+  description        = "An example project"
+  visibility         = "private"
+  version_control    = "Git"
+  work_item_template = "Agile"
+}
+
+
+resource "azuredevops_project" "project" {
+  name               = "MyNewProject4"
+  description        = "An example project"
+  visibility         = "private"
+  version_control    = "Git"
+  work_item_template = "Agile"
+}
+
+
+resource "azuredevops_project" "project" {
+  name               = "MyNewProject5"
   description        = "An example project"
   visibility         = "private"
   version_control    = "Git"
