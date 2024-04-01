@@ -14,7 +14,7 @@ provider "azuredevops" {
 }
 
 
-resource "azuredevops_project" "project" {
+resource "azuredevops_project" "project1" {
   name               = "MyNewProject2"
   description        = "An example project"
   visibility         = "private"
@@ -23,7 +23,7 @@ resource "azuredevops_project" "project" {
 }
 
 
-resource "azuredevops_project" "project" {
+resource "azuredevops_project" "project2" {
   name               = "MyNewProject4"
   description        = "An example project"
   visibility         = "private"
@@ -32,7 +32,7 @@ resource "azuredevops_project" "project" {
 }
 
 
-resource "azuredevops_project" "project" {
+resource "azuredevops_project" "project3" {
   name               = "MyNewProject5"
   description        = "An example project"
   visibility         = "private"
