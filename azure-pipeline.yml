@@ -10,12 +10,8 @@ variables:
 steps:
 - checkout: self
 
-- task: TerraformInstaller@0
-  inputs:
-    terraformVersion: 'latest'
-  displayName: 'Install Terraform'
-
 - script: |
+    terraform --version
     terraform init
     terraform plan -var "personal_access_token=$(personal_access_token)" -out=tfplan
     terraform apply -auto-approve tfplan
