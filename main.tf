@@ -37,5 +37,5 @@ resource "azuredevops_project" "project3" {
   description        = "An example project"
   visibility         = "private"
   version_control    = "Git"
-  work_item_template = "Basic"
+  work_item_template = "Agile"
 }
